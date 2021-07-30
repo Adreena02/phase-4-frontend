@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function NavBar() {
+function NavBar() {
     return (
         <div>
-            
+           <Search />
+           <Login />
+           <Header /> 
         </div>
     )
 }
+
+export default NavBar

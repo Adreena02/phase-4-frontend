@@ -4,6 +4,7 @@ function Content() {
     return (
         <div>
             <NavBar />
+            <Container />
         </div>
     )
 }
