@@ -2,55 +2,55 @@
     "artworks": [
         {
             "title": "The Kiss",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Klimt_-_The_Kiss.jpg",
             "id": 1
         },
         {
             "title": "Portrait of Adele Bloch-Bauer I",
-            "Artist": "Gustav Klimt",
-            "image": "https://en.wikipedia.org/wiki/Portrait_of_Adele_Bloch-Bauer_I#/media/File:Gustav_Klimt_046.jpg",
+            "artist": "Gustav Klimt",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gustav_Klimt_046.jpg/1280px-Gustav_Klimt_046.jpg",
             "id": 2
         },
         {
             "title": "Fulfillment",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/Preparatory_design_-_Klimt_-_Stoclet_Palace.jpg",
             "id": 3
         },
         {
             "title": "Portrait of Hermine Gallia",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Gustav_Klimt_053.jpg",
             "id": 4
         },
         {
             "title": "Schubert at the Piano II",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Schubert-Klimt.jpg",
             "id": 5
         },
         {
             "title": "Mäda Primavesi",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Gustav_Klimt_050.jpg",
             "id": 6
         },
         {
             "title": "Avenue in the Park of Schloss Kammer",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Gustav_Klimt_068.jpg",
             "id": 7
         },
         {
             "title": "A Morning by the Pond Tranquil Pond (Egelsee near Golling, Salzburg)",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Gustav_Klimt_-_Tranquil_Pond_%28Egelsee_near_Golling%2C_Salzburg%29_-_Google_Art_Project.jpg",
             "id": 8
         },
         {
             "title": "Blind Man",
-            "Artist": "Gustav Klimt",
+            "artist": "Gustav Klimt",
             "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Gustav_Klimt_-_Blind_Man_-_Google_Art_Project.jpg",
             "id": 9
         }
