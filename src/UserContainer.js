@@ -6,7 +6,6 @@ function UserContainer() {
     return (
         <div>
             <Art />
-            <Footer />
         </div>
     )
 }

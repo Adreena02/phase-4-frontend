@@ -16,7 +16,7 @@ function ContainerCard({artCards}) {
     return (
         <div>
             {artArr}
-            <Footer />
+            
         </div>
     )
 }
