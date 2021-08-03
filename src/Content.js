@@ -8,12 +8,12 @@ function Content() {
     const [artCards, showArtCards] = useState([])
     const [home, setHome] = useState(false)
     const [search, setSearch] = useState("")
-    const [userLog, setUserLog] = useState(false)
     const [toggleState, setToggleState] = useState(false)
+    const [userLog, setUserLog] = useState(false)
 
 
     useEffect(() => {
-        fetch("http://localhost:8000/artworks")
+        fetch("http://localhost:3000/arts")
         .then(res => res.json())
         .then(data => showArtCards(data))
     }, [])
@@ -25,16 +25,16 @@ function Content() {
         (artCard.artist.toLowerCase().includes(search.toLowerCase()))
     })
 
+
     const handleToggleState = () => {
         setToggleState(toggleState => !toggleState)
       }
 
-    
 
-
-    const handleSearch = (e) => {
+        const handleSearch = (e) => {
             setSearch(e.target.value)
     }
+
 
     return (
         <div>

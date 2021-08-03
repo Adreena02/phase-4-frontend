@@ -8,9 +8,9 @@ function Art(props) {
     const [front, setFront] = useState(true)
     const [toggleLike, setToggleLike] = useState(false)
 
-    const {artist, id, title, image, likes, tags} = props
+    const {artist_info, id, title, img_url, likes, art_tags} = props
     
-    const tagsArr = tags.map((tag) => {
+    const tagsArr = art_tags.map((tag) => {
         return(
             <li>{tag}</li>
             )
@@ -38,7 +38,7 @@ function Art(props) {
             </div> */}
                 {front ? 
                 <div className="photo">
-                    <img src= {image} alt= "oops"/>
+                    <img src= {img_url} alt= "oops"/>
                     <br></br>
                     <button className = "similar">Discover similar artwork</button>
                     <button className = "details" onClick={handleClick}>Details</button>
@@ -46,7 +46,7 @@ function Art(props) {
                 :
                 <div className="text">
                     <h5>{title}</h5>
-                    <h6>by {artist}</h6>
+                    <h6>by {artist_info}</h6>
 
                         {toggleLike ? (
                             <button
