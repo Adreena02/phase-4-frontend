@@ -5,22 +5,17 @@ import UserContainer from './UserContainer'
 import { useState, useEffect } from 'react'
 
 
-function Container() {
-
-    const [artCards, showArtCards] = useState([])
-
-    useEffect(() => {
-        fetch("http://localhost:8000/artworks")
-        .then(res => res.json())
-        .then(data => showArtCards(data))
-    }, [])
+function Container({filteredArt}) {
 
     
 
     return (
         <div>
-            <ContainerCard artCards={artCards} />
-            {/* <UserContainer artCards={artCards}/> */}
+            {/* {home ? */}
+            <ContainerCard filteredArt={filteredArt} />
+            {/* : */}
+            {/* <UserContainer artCards={artCards}/>
+            } */}
         </div>
     )
 }

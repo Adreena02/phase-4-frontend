@@ -6,7 +6,6 @@ import "./App.css"
 function Art(props) {
 
     const [front, setFront] = useState(true)
-    const [liked, setLiked] = useState([])
     const [toggleLike, setToggleLike] = useState(false)
 
     const {artist, id, title, image, likes, tags} = props
@@ -24,18 +23,6 @@ function Art(props) {
     const handleClick = (e) => {
         setFront(front => !front)
     }
-
-    // const handleLikes = (e) => {
-    //     const newLike = liked + 1
-    //     fetch (`http://localhost:8000/artworks/${id}`,{
-    //         method: 'PATCH',
-    //         headers: { 'Content-Type': 'application/json'},
-    //         body: JSON.stringify({ "likes": newLike})
-    //     })
-    //     .then(res => res.json())
-    //     .then(res => {setLiked(res.likes)
-    //     })
-    // }
 
     return (
         
@@ -79,7 +66,7 @@ function Art(props) {
                         <br></br>
                         <p3>tags: {tagsArr}</p3>
 
-                    <button className="art" onClick={handleClick}>Art</button>
+                    <button className="art" onClick={handleClick}>Show Art</button>
                 </div> 
             // </div>
                 }

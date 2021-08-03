@@ -1,9 +1,9 @@
 import React from 'react'
-function Search() {
+function Search({handleSearch}) {
     return (
         <div>
          <div className="ui icon input">
-        <input className="prompt" value="" placeholder="Search for your favorite"  onChange="" />
+        <input onChange={handleSearch} className="prompt" placeholder="Search for your favorite"/>
         <i className="search icon" />
       </div>
         </div>

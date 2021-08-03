@@ -2,9 +2,9 @@ import React from 'react'
 import Art from './Art'
 import Footer from './Footer'
 
-function ContainerCard({artCards}) {
+function ContainerCard({filteredArt}) {
 
-    const artArr = artCards.map((artimg) => {
+    const artArr = filteredArt.map((artimg) => {
         return(
             <Art key = {artimg.id} 
                 {...artimg}/>

@@ -3,11 +3,11 @@ import Search from './Search'
 import Login from './Login'
 import Header from './Header'
 
-function NavBar() {
+function NavBar({handleToggle, handleSearch}) {
     return (
         <div>
-           <Search />
-           <Login />
+           <Search handleSearch={handleSearch}/>
+           <Login handleToggle={handleToggle} />
            <Header /> 
         </div>
     )
