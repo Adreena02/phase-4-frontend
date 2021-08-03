@@ -16,9 +16,7 @@ function Footer() {
                             <p>An art gallery site.</p>
                         </h5>
                     </div>
-                  
-                </div>
-           
+                  </div>
             <div className="row">
                 <p className="col-sm">
                     &copy; 2021 Phase Four Project by Darren, Adreena and Terry

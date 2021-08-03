@@ -1,0 +1,54 @@
+.main-header{
+    color: white;
+    background-color: rgb(192, 182, 162);
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%
+}
+
+.header {
+    padding-top: 0.5vh;
+    padding-left: 0.5vh;
+}
+
+.btn-one {
+    width: 20em;
+    margin-left: 0.75em;
+    background-color:tomato;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 0.75em;
+    position: relative;
+}
+
+.btn-two {
+    width: 20em;
+    margin-left: 0.75em;
+    background-color: tomato;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 0.75em;
+    position: relative;
+
+}
+
+.btn-three {
+    width: 20em;
+    margin-left: 0.75em;
+    background-color: tomato;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 0.75em;
+    position: relative;
+}
+
+.btn-four {
+    width: 20em;
+    margin-left: 0.75em;
+    background-color: tomato;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 0.75em;
+    position: relative;
+}
