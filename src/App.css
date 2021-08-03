@@ -48,30 +48,41 @@
   flex: 1;
 }
 
-.card .photo{
-  height: 225px;
-  width: 300px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
 .card {
-  list-style: none;
   margin: 1rem;
   box-shadow: 0 0 7px 0 #ddd;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 300px;
+  width: 500px;
+  justify-content: center;
 }
 
 .card .photo img{
-  max-width: 300px;
-  max-height: 225px;
+  max-width: 500px;
+  max-height: 425px;
   width: auto;
   height: auto;
 }
 
 .cards {
-  display: inline-block
+  display: inline-block;
+}
+
+.card .text{
+  height: 425px;
+  width: 500px;
+  height: auto;
+}
+
+p3{
+  font-size: 14px;
+}
+
+h5, h6{
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+
+.like{
+  font-size: 14px;
 }
