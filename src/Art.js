@@ -61,7 +61,6 @@ function Art(props) {
 
                     <button className="art" onClick={handleClick}>Show Art</button>
                 </div> 
-            // </div>
                 }
         </Card>
         
