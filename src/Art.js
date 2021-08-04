@@ -45,8 +45,8 @@ function Art(props) {
                 </div>
                 :
                 <div className="text">
-                    <h5>{title}</h5>
-                    <h6>by {artist_info}</h6>
+                    <h4>{title}</h4>
+                    <h5>by {artist_info}</h5>
 
                         {toggleLike ? (
                             <button
@@ -64,7 +64,7 @@ function Art(props) {
                             </button>
                             )}
                         <br></br>
-                        <p3>tags: {tagsArr}</p3>
+                        {/* <p3>tags: {art_tags}</p3> */}
 
                     <button className="art" onClick={handleClick}>Show Art</button>
                 </div> 

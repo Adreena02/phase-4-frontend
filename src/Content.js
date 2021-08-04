@@ -22,7 +22,7 @@ function Content() {
     const filteredArt = artCards.filter(artCard =>  {
         return (artCard.title.toLowerCase().includes(search.toLowerCase()))
         ||
-        (artCard.artist.toLowerCase().includes(search.toLowerCase()))
+        (artCard.artist_info.toLowerCase().includes(search.toLowerCase()))
     })
 
 
