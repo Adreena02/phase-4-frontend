@@ -8,11 +8,11 @@ function Art(props) {
     const [front, setFront] = useState(true)
     const [toggleLike, setToggleLike] = useState(false)
 
-    const {artist_info, id, title, img_url, likes, art_tags} = props
+    const {artist_info, id, title, img_url, likes, tags} = props
     
-    const tagsArr = art_tags.map((tag) => {
+    const tagsArr = tags.map((tag) => {
         return(
-            <li>{tag}</li>
+            <li>{tag.name}</li>
             )
     })
     
@@ -64,7 +64,7 @@ function Art(props) {
                             </button>
                             )}
                         <br></br>
-                        {/* <p3>tags: {art_tags}</p3> */}
+                        <p3>tags: {tagsArr}</p3>
 
                     <button className="art" onClick={handleClick}>Show Art</button>
                 </div> 
