@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Button } from 'semantic-ui-react'
 import {useState} from "react"
 import "./App.css"
+import './Card.css'
 
 function Art(props) {
 

@@ -1,0 +1,76 @@
+.card {
+    margin: 1rem;
+    box-shadow: 0 0 7px 0 #ddd;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    max-width: 500px;
+    justify-content: center;
+  }
+  
+  .card .photo img{
+    max-width: 500px;
+    max-height: 425px;
+    width: auto;
+    height: auto;
+  }
+  
+  .cards {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .card .text{
+    height: 425px;
+    width: 500px;
+    height: auto;
+  }
+  
+  p3 {
+    font-size: 14px;
+  }
+  
+  h4, h5{
+    text-align: center;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+  
+  .like{
+    font-size: 14px;
+  }
+
+  
+  .similar {
+    
+    /* width: 9em;
+    height: 9em; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* margin-left: 0.55em; */
+    margin-right: 2em;
+    background-color: rgb(111, 131, 173);
+    color: white;
+    font-size: .85em;
+    font-weight: bold;
+    border-radius: 0.5em;
+  
+  }
+  
+  .details {
+    margin-left: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(111, 131, 173);
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 0.5em;
+  }
+  
+  .art {
+    border-radius: 0.5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(111, 131, 173);
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    
+  }

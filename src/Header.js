@@ -9,7 +9,7 @@ function Header() {
             <hr />
             <button type="button" class="btn-one">Artworks</button>
             <button type="button" class="btn-two">Artists</button>
-            <button type="button" class="btn-three">Likes</button>
+            <button type="button" class="btn-three">Favorites</button>
             <button type="button" class="btn-four">Tags</button>
         </div>
        

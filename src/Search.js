@@ -1,11 +1,13 @@
 import React from 'react'
+import './Search.css'
+
 function Search({handleSearch}) {
     return (
-        <div>
-         <div className="ui icon input">
-        <input onChange={handleSearch} className="prompt" placeholder="Search for your favorite"/>
-        <i className="search icon" />
-      </div>
+        <div className="main-search">
+          <div className="ui-icon-input">
+            <input onChange={handleSearch} className="prompt" placeholder="Search for your favorite"/>
+            <i className="search-icon" />
+          </div>
         </div>
     )
 }

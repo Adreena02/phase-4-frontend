@@ -1,14 +1,24 @@
-import { Button } from 'bootstrap'
+// import DropdownButton from 'react-bootstrap/DropdownButton'
+// import Dropdown from 'react-bootstrap/Dropdown'
 import React from 'react'
+import "./Login.css"
 
-function Login({handleToggle}) {
 
+function Login({setLoggedIn, users}) {
+    let userList = users.map(user => <option key= {user.id}> {user.name}</option>)
+
+    function newUser(e) {
+        let currentUser = users.find(user => user.name === e.target.value)
+        setLoggedIn(currentUser)
+    }
 
     return (
-        <div>
-            Welcome User! (not you?) LOGOUT
-            <button>HOME</button>
-            <button onClick={handleToggle}>LOGIN</button>
+        <div className="login">
+            <button class="home-btn">Home</button>
+            <select className="login-select" onChange={newUser}>
+               <option>Select Current User</option>
+               {userList}
+            </select>
         </div>
     )
 }
