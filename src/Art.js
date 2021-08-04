@@ -1,13 +1,13 @@
 import React from 'react'
 import { Card, Button } from 'semantic-ui-react'
 import {useState} from "react"
-import "./App.css"
-import './Card.css'
+import "./Card.css"
 
 function Art(props) {
 
     const [front, setFront] = useState(true)
-    const [toggleLike, setToggleLike] = useState(false)
+    const [toggleLike, setToggleLike] = useState(false) 
+    
 
     const {artist_info, id, title, img_url, likes, tags} = props
     
@@ -16,10 +16,11 @@ function Art(props) {
             <li>{tag.name}</li>
             )
     })
-    
+
+
     const handleToggle = () => {
         setToggleLike(toggleLike => !toggleLike)
-      }
+    }
 
     const handleClick = (e) => {
         setFront(front => !front)
@@ -28,15 +29,6 @@ function Art(props) {
     return (
         
         <Card className="cards">
-            {/* <div>
-                {front ?
-                <div className="photo">
-                    <img src= {image} alt= "oops"/>
-                    <br></br>
-                    <button className = "similar">Discover similar artwork</button>
-                    <button className = "details" onClick={handleClick}>Details</button>
-                </div>
-            </div> */}
                 {front ? 
                 <div className="photo">
                     <img src= {img_url} alt= "oops"/>

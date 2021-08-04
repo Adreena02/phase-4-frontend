@@ -5,19 +5,17 @@ import UserContainer from './UserContainer'
 import { useState, useEffect } from 'react'
 
 
-function Container({filteredArt, isLoggedIn}) {
-
-    
+function Container({filteredArt, toggle}) {
 
     
 
     return (
         <div>
-            {/* {isLoggedIn ? */}
-            <ContainerCard filteredArt={filteredArt} />
-            {/* : */}
-            {/* <UserContainer filteredArt={filteredArt}/>
-            } */}
+            {toggle ? (
+                <UserContainer />
+                ) : (
+                <ContainerCard filteredArt={filteredArt} />
+            )}
         </div>
     )
 }

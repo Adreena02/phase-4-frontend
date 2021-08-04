@@ -7,9 +7,9 @@ function Content() {
 
     const [artCards, showArtCards] = useState([])
     const [search, setSearch] = useState("")
-    const [toggleState, setToggleState] = useState(false)
     const [users, setUsers] = useState([])
     const [isLoggedIn, setLoggedIn] = useState("")
+    const [toggle, setToggle] = useState(false)
 
 
     useEffect(() => {
@@ -31,9 +31,8 @@ function Content() {
         (artCard.artist_info.toLowerCase().includes(search.toLowerCase()))
     })
  
-
-    const handleToggleState = () => {
-        setToggleState(toggleState => !toggleState)
+    const handleToggle = () => {
+        setToggle(!toggle)
       }
 
 
@@ -44,8 +43,16 @@ function Content() {
 
     return (
         <div>
-            <NavBar filteredArt={filteredArt} handleSearch={handleSearch} setLoggedIn={setLoggedIn} users={users}/>
-            <Container filteredArt={filteredArt} isLoggedIn={isLoggedIn} />
+            <NavBar 
+                filteredArt={filteredArt} 
+                handleSearch={handleSearch} 
+                setLoggedIn={setLoggedIn} 
+                users={users}
+                handleToggle={handleToggle}/>
+            <Container 
+                filteredArt={filteredArt} 
+                isLoggedIn={isLoggedIn} 
+                toggle={toggle}/>
         </div>
     )
 }
