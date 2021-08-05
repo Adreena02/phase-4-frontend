@@ -33,7 +33,7 @@ function Art(props) {
                 <div className="photo">
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
-                    <button className = "similar">Discover similar artwork</button>
+                    <button className = "similar">Favorite</button>
                     <button className = "delete" onClick="">Remove from Favorites</button>
                     <button className = "details" onClick={handleClick}>Details</button>
                 </div>

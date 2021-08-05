@@ -18,14 +18,15 @@ function Container({filteredArt, toggle, users, abcUser}) {
         }
     }, [abcUser])
 
-    const favArt = faves.map(fave => {
-        return (
-            <UserContainer 
-                key={fave.id}
-                abcUser={abcUser}
-                {...fave}/>
-        )
-    })
+
+    function deleteFromFaves(artId) {
+
+        const updatedFaves = faves.filter((fave) => {
+                    return fave.id !== artId
+                })
+    
+        setFaves(updatedFaves)
+    }
 
     
 
@@ -33,8 +34,14 @@ function Container({filteredArt, toggle, users, abcUser}) {
         <div>
             {toggle ? (
                 <div>
-                    {favArt}
+                    <UserContainer abcUser={abcUser} faves={faves} deleteFromFaves={deleteFromFaves}/>
+                    
+                    {/* {favArt} */}
                 </div>
+                // <UserContainer>
+                //     <FavArt />
+                //     <SuggestedArt />
+                // </UserContainer>
                 ) : (
                 <ContainerCard filteredArt={filteredArt} />
             )}
