@@ -8,7 +8,8 @@ function Content() {
     const [artCards, showArtCards] = useState([])
     const [search, setSearch] = useState("")
     const [users, setUsers] = useState([])
-    const [isLoggedIn, setLoggedIn] = useState("")
+    const [abcUser, changeUser] = useState("")
+    const [isLoggedIn, setLoggedIn] = useState(false)
     const [toggle, setToggle] = useState(false)
 
 
@@ -31,23 +32,31 @@ function Content() {
         (artCard.artist_info.toLowerCase().includes(search.toLowerCase()))
     })
 
-    let userList = users.map(user => <option key= {user.id}> {user.name}</option>)
-
-    function newUser(e) {
-        let currentUser = users.find(user => user.name === e.target.value)
-        setLoggedIn(currentUser)
-    }
+    let userList = users.map(user => <option key= {user.id} value={user.name}> {user.name}</option>)
  
+    
     const handleToggle = () => {
         setToggle(!toggle)
       }
+
+    // const handleState = () => {
+    //     setLoggedIn(!isLoggedIn)
+    // }
+    
+      function newUser(e) {
+        let currentUser = users.find(user => user.name === e.target.value)
+        setLoggedIn(true)
+        changeUser(currentUser)
+        // handleState()
+    }
+ 
 
 
     const handleSearch = (e) => {
         setSearch(e.target.value)
     }
     
-
+    
 
     return (
         <div>
@@ -59,11 +68,14 @@ function Content() {
                 userList={userList}
                 // users={users}
                 handleToggle={handleToggle}
+                abcUser={abcUser}
+                changeUser={changeUser}
                 />
             <Container 
                 filteredArt={filteredArt} 
                 isLoggedIn={isLoggedIn} 
                 toggle={toggle}
+                abcUser={abcUser}
                 users={users}/>
         </div>
     )

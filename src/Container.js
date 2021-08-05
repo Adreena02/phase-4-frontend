@@ -4,16 +4,19 @@ import UserContainer from './UserContainer'
 import { useState, useEffect } from 'react'
 
 
-function Container({filteredArt, toggle, users}) {
+function Container({filteredArt, toggle, users, abcUser}) {
     const [faves, setFaves] = useState([])
 
-    const [id] = users
 
     useEffect(() => {
-        fetch(`http://localhost:3000/users/7/favorites`)
-        .then(res => res.json())
-        .then(data => setFaves(data))
-    }, [])
+        if (abcUser.id){
+            console.log('test2');
+            fetch(`http://localhost:3000/users/${abcUser.id}/favorites`)
+            .then(res => res.json())
+            .then(data => setFaves(data))
+            // .then(console.log)
+        }
+    }, [abcUser])
 
     const favArt = faves.map(fave => {
         return (

@@ -4,7 +4,7 @@ import React from 'react'
 import "./Login.css"
 
 
-function Login({userList, newUser}) {
+function Login({userList, newUser, changeUser, abcUser}) {
     // let userList = users.map(user => <option key= {user.id}> {user.name}</option>)
 
     // function newUser(e) {
@@ -12,15 +12,15 @@ function Login({userList, newUser}) {
     //     setLoggedIn(currentUser)
     // }
 
-    function handleUser(){
-        newUser()
-    }
-    console.log("hello",newUser);
+    // function handleUser(){
+    //     newUser()
+    // }
+  
 
     return (
         <div className="login">
             <button class="home-btn">Home</button>
-            <select className="login-select" onChange={handleUser}>
+            <select className="login-select" onChange={newUser} value={abcUser}>
                <option>Select Current User</option>
                {userList}
             </select>
