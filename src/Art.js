@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button } from 'semantic-ui-react'
+import { Card} from 'semantic-ui-react'
 import {useState} from "react"
 import "./Card.css"
 
@@ -9,7 +9,7 @@ function Art(props) {
     const [toggleLike, setToggleLike] = useState(false) 
     
 
-    const {artist_info, id, title, img_url, likes, tags} = props
+    const {artist_info, title, img_url, tags} = props
     
     const tagsArr = tags.map((tag) => {
         return(

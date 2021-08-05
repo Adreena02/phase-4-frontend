@@ -1,20 +1,24 @@
 import React, {useState, useEffect}from 'react'
 import {Card} from 'semantic-ui-react'
+import "./Card.css"
 import Art from './Art'
 import Footer from './Footer'
 
-function UserContainer() {
-    const [faves, setFaves] = useState([])
-    const faveUrl = ("")
+function UserContainer(props) {
+    const [front, setFront] = useState(true)
 
-    // props = faves
+    const {artist_info, img_url, title, tags} = props
 
+    const handleClick = (e) => {
+        setFront(front => !front)
+    }
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:3000/users/${id}/favorites`)
-    //     .then(res => res.json())
-    //     .then(data => setFaves(data))
-    // }, [])
+    const tagsArr = tags.map((tag) => {
+        return(
+            <li>{tag.name}</li>
+            )
+    })
+
 
     // const removeFave(id) = () => {
     //     fetch(``), {
@@ -69,6 +73,29 @@ function UserContainer() {
 //                 }
 //         </Card>
 //     )
+    return (
+        <div>
+            <Card className="cards">
+                {front ?
+                 <div className="photo">
+                    <img src= {img_url} alt= "oops"/>
+                    <br></br>
+                    <button className = "similar">Discover similar artwork</button>
+                    <button className = "details" onClick={handleClick}>Details</button>
+                 </div>
+                 :
+                 <div className="text">
+                    <h4>{title}</h4>
+                    <h5>by {artist_info}</h5>
+                    <button className="favorite active">
+                                ★
+                    </button>
+                    <p3>tags: {tagsArr}</p3>
+                </div>
+                }
+            </Card> 
+        </div>
+    )
 }
 
 export default UserContainer

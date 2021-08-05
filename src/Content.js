@@ -52,7 +52,8 @@ function Content() {
             <Container 
                 filteredArt={filteredArt} 
                 isLoggedIn={isLoggedIn} 
-                toggle={toggle}/>
+                toggle={toggle}
+                id={users.id}/>
         </div>
     )
 }
