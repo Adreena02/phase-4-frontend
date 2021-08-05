@@ -91,6 +91,7 @@ function UserContainer(props) {
                                 ★
                     </button>
                     <p3>tags: {tagsArr}</p3>
+                    <button className="art" onClick={handleClick}>Show Art</button>
                 </div>
                 }
             </Card> 
