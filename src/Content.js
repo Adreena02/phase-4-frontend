@@ -30,15 +30,23 @@ function Content() {
         ||
         (artCard.artist_info.toLowerCase().includes(search.toLowerCase()))
     })
+
+    let userList = users.map(user => <option key= {user.id}> {user.name}</option>)
+
+    function newUser(e) {
+        let currentUser = users.find(user => user.name === e.target.value)
+        setLoggedIn(currentUser)
+    }
  
     const handleToggle = () => {
         setToggle(!toggle)
       }
 
 
-        const handleSearch = (e) => {
-            setSearch(e.target.value)
+    const handleSearch = (e) => {
+        setSearch(e.target.value)
     }
+    
 
 
     return (
@@ -46,14 +54,17 @@ function Content() {
             <NavBar 
                 filteredArt={filteredArt} 
                 handleSearch={handleSearch} 
-                setLoggedIn={setLoggedIn} 
-                users={users}
-                handleToggle={handleToggle}/>
+                // setLoggedIn={setLoggedIn} 
+                newUser={newUser}
+                userList={userList}
+                // users={users}
+                handleToggle={handleToggle}
+                />
             <Container 
                 filteredArt={filteredArt} 
                 isLoggedIn={isLoggedIn} 
                 toggle={toggle}
-                id={users.id}/>
+                users={users}/>
         </div>
     )
 }

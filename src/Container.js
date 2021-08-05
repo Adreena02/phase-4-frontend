@@ -4,8 +4,10 @@ import UserContainer from './UserContainer'
 import { useState, useEffect } from 'react'
 
 
-function Container({filteredArt, toggle, id}) {
+function Container({filteredArt, toggle, users}) {
     const [faves, setFaves] = useState([])
+
+    const [id] = users
 
     useEffect(() => {
         fetch(`http://localhost:3000/users/7/favorites`)
