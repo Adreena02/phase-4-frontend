@@ -7,7 +7,7 @@ import Footer from './Footer'
 function UserContainer(props) {
     const [front, setFront] = useState(true)
 
-    const {artist_info, img_url, title, tags} = props
+    const {artist_info, img_url, title, tags, abcUser} = props
 
     const handleClick = (e) => {
         setFront(front => !front)
@@ -20,11 +20,11 @@ function UserContainer(props) {
     })
 
 
-    // const removeFave(id) = () => {
-    //     fetch(``), {
-    //         method: 'DELETE',
-    //     }
-    // }
+    const removeFave = () => {
+        fetch (`http://localhost:3000/likes/${abcUser.id}`, {
+            method: 'DELETE',
+        })
+    }
 
     // fetch(faveUrl, {
     //     method: "POST",
@@ -80,7 +80,7 @@ function UserContainer(props) {
                  <div className="photo">
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
-                    <button className = "similar">Discover similar artwork</button>
+                    <button className = "similar" onClick={removeFave}>delete similar artwork</button>
                     <button className = "details" onClick={handleClick}>Details</button>
                  </div>
                  :

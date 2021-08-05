@@ -22,6 +22,7 @@ function Container({filteredArt, toggle, users, abcUser}) {
         return (
             <UserContainer 
                 key={fave.id}
+                abcUser={abcUser}
                 {...fave}/>
         )
     })
