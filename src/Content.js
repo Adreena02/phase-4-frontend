@@ -61,15 +61,17 @@ function Content() {
     
     function handleFavButton() {
     
-    const data = { user_id: changeUser.id, art_id:"2"}
+    const likedData = { user_id: changeUser.id, art_id: artCards.id}
+    
+    console.log(changeUser.id)
     //     let likeId = likes.find(like => like.user_id === changeUser.id).id
  
-    fetch(`http://localhost:3000/likes/3`, {
+    fetch(`http://localhost:3000/likes/${changeUser.id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(likedData),
     })
     .then(response => response.json())
     .then(data => console.log(data))
