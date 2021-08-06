@@ -9,7 +9,10 @@ function Art(props) {
     const [toggleLike, setToggleLike] = useState(false) 
     
 
-    const {artist_info, title, img_url, tags} = props
+
+
+
+    const {artist_info, title, img_url, tags, handleFavButton} = props
     
     const tagsArr = tags.map((tag) => {
         return(
@@ -34,7 +37,7 @@ function Art(props) {
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
                     <button className = "similar">Favorite</button>
-                    <button className = "delete" onClick="">Remove from Favorites</button>
+
                     <button className = "details" onClick={handleClick}>Details</button>
                 </div>
                 :
@@ -44,14 +47,14 @@ function Art(props) {
 
                         {toggleLike ? (
                             <button
-                                onClick={handleToggle}
+                                onClick={handleFavButton}
                                 className="favorite active"
                             >
                                 ★
                             </button>
                             ) : (
                             <button
-                                onClick={handleToggle}
+                                onClick={handleFavButton}
                                 className="favorite unactive"
                             >
                                 ☆

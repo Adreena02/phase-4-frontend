@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Container from './Container'
 import { useState, useEffect } from 'react'
 
+
 function Content() {
 
     const [artCards, showArtCards] = useState([])
@@ -56,7 +57,29 @@ function Content() {
         setSearch(e.target.value)
     }
     
+    // Post Request for Favorite button
     
+    function handleFavButton() {
+    
+    const data = { user_id: abcUser.id, art_id:"2"}
+    //     let likeId = likes.find(like => like.user_id === abcUser.id).id
+ 
+    fetch(`http://localhost:3000/likes/3`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    }
+    
+
+
+
+
+
 
     return (
         <div>
@@ -76,7 +99,9 @@ function Content() {
                 isLoggedIn={isLoggedIn} 
                 toggle={toggle}
                 abcUser={abcUser}
-                users={users}/>
+                users={users}
+                handleFavButton={handleFavButton}
+                />
         </div>
     )
 }

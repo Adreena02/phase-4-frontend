@@ -20,7 +20,6 @@ function FavArt(props) {
             )
     })
 
-        console.log(props)
     const removeFave = () => {
         if (abcUser.id){
             let likeId = likes.find(like => like.user_id === abcUser.id).id

@@ -16,6 +16,7 @@ function UserContainer(props) {
             .then(setSuggestions)
         }
     }, [])
+    
 
     const favArt = faves.map(fave => {
         return (

@@ -4,19 +4,22 @@ import UserContainer from './UserContainer'
 import { useState, useEffect } from 'react'
 
 
-function Container({filteredArt, toggle, users, abcUser}) {
+function Container({filteredArt, toggle, users, abcUser, handleFavButton}) {
     const [faves, setFaves] = useState([])
 
-
+// Fetch Get Request for User Favorites
     useEffect(() => {
         if (abcUser.id){
-            console.log('test2');
+     
             fetch(`http://localhost:3000/users/${abcUser.id}/favorites`)
             .then(res => res.json())
             .then(data => setFaves(data))
             // .then(console.log)
         }
     }, [abcUser])
+
+
+    
 
 
     function deleteFromFaves(artId) {
@@ -34,7 +37,10 @@ function Container({filteredArt, toggle, users, abcUser}) {
         <div>
             {toggle ? (
                 <div>
-                    <UserContainer abcUser={abcUser} faves={faves} deleteFromFaves={deleteFromFaves}/>
+                    <UserContainer 
+                    abcUser={abcUser} 
+                    faves={faves} 
+                    deleteFromFaves={deleteFromFaves}/>
                     
                     {/* {favArt} */}
                 </div>
@@ -43,7 +49,9 @@ function Container({filteredArt, toggle, users, abcUser}) {
                 //     <SuggestedArt />
                 // </UserContainer>
                 ) : (
-                <ContainerCard filteredArt={filteredArt} />
+                <ContainerCard 
+                filteredArt={filteredArt} 
+                handleFavButton={handleFavButton}/>
             )}
         </div>
     )
