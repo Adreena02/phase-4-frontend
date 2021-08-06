@@ -34,35 +34,18 @@ function Art(props) {
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
                     <button className = "similar">Favorite</button>
-                    <button className = "delete" onClick="">Remove from Favorites</button>
                     <button className = "details" onClick={handleClick}>Details</button>
                 </div>
                 :
                 <div className="text">
                     <h4>{title}</h4>
                     <h5>by {artist_info}</h5>
-
-                        {toggleLike ? (
-                            <button
-                                onClick={handleToggle}
-                                className="favorite active"
-                            >
-                                ★
-                            </button>
-                            ) : (
-                            <button
-                                onClick={handleToggle}
-                                className="favorite unactive"
-                            >
-                                ☆
-                            </button>
-                            )}
-                        <br></br>
-                        <p3>tags: {tagsArr}</p3>
+                    <p3 style= {{fontWeight: 'bold'}}>Tags: </p3>
+                    <p4>{tagsArr}</p4>
 
                     <button className="art" onClick={handleClick}>Show Art</button>
                 </div> 
-                }
+}
         </Card>
         
     )

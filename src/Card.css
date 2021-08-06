@@ -17,6 +17,7 @@
   .cards {
     display: inline-block;
     position: relative;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .card .text{
@@ -73,4 +74,15 @@
     font-size: 0.85em;
     font-weight: bold;
     
+  }
+
+  .similar {
+    margin-left: 3em;
+    position: center;
+  }
+  .details {
+    margin-left: 4.5em;
+  }
+  .art {
+    position: center;
   }

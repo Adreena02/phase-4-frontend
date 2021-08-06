@@ -50,17 +50,15 @@ function FavArt(props) {
                  <div className="photo">
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
-                    <button className = "similar" onClick={removeFave}>delete artwork</button>
-                    <button className = "details" onClick={handleClick}>Details</button>
+                    <button className = "similar" onClick={removeFave}>Remove from Favorite</button>
+                    <button className = "details" onClick={handleClick}>Show Details</button>
                  </div>
                  :
                  <div className="text">
                     <h4>{title}</h4>
                     <h5>by {artist_info}</h5>
-                    <button className="favorite active">
-                                ★
-                    </button>
-                    <p3>tags: {tagsArr}</p3>
+                    <p3 style= {{fontWeight: 'bold'}}>Tags: </p3>
+                    <p4>{tagsArr}</p4>
                     <button className="art" onClick={handleClick}>Show Art</button>
                 </div>
                 }

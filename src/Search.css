@@ -1,7 +1,13 @@
+.main-search {
+    width: 25em;
+    margin-left: 20em;
+    margin-bottom: 1em;
+
+}
 
 .ui-icon-input {
-    width: 15em;
-    margin-left: 0.75em;
+    width: 25em;
+    margin-left: 2em;
     padding-top: 0.25em;
    
 }
