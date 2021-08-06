@@ -3,7 +3,7 @@ import React from 'react'
 import Login from './Login'
 // import Header from './Header'
 
-function NavBar({handleSearch, newUser, userList, handleToggle}) {
+function NavBar({handleSearch, newUser, userList, handleToggle, setChangeUser}) {
     return (
         <div>
              {/* <Header 
@@ -15,6 +15,7 @@ function NavBar({handleSearch, newUser, userList, handleToggle}) {
                 newUser={newUser}
                 userList={userList}
                 handleToggle={handleToggle}
+                setChangeUser={setChangeUser}
                 />
                 {/* unneeded components, but for future editing - handleSearch belongs to Search component and HandleToggle belongs to Header for Favorites Button */}
                 {/* <Search 

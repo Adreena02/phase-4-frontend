@@ -10,7 +10,6 @@ function Content() {
     const [search, setSearch] = useState("")
     const [users, setUsers] = useState([])
     const [changeUser, setChangeUser] = useState("")
-    const [isLoggedIn, setLoggedIn] = useState(false)
     const [toggle, setToggle] = useState(false)
     const [likes, setLikes] = useState([])
 
@@ -53,7 +52,6 @@ function Content() {
     
       function newUser(e) {
         let currentUser = users.find(user => user.name === e.target.value)
-        // setLoggedIn(true)
         setChangeUser(currentUser)
     }
  
@@ -78,8 +76,8 @@ function Content() {
         // console.log(artCards[0].id)
     
         const likesObj = {
-            art_id: artCards.id,
-            user_id: changeUser.id
+            art_id: filteredArt.id,
+            user_id: users.id
         }
 
         // console.log(filteredArt[0].id)
@@ -97,7 +95,7 @@ function Content() {
             body: JSON.stringify(likesObj),
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => console.log("beef", data))
             // .then(data => setLikes(data))
     }
 
@@ -116,7 +114,6 @@ function Content() {
                 />
             <Container 
                 filteredArt={filteredArt} 
-                isLoggedIn={isLoggedIn} 
                 toggle={toggle}
                 changeUser={changeUser}
                 users={users}
