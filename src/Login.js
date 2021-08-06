@@ -2,9 +2,11 @@
 // import Dropdown from 'react-bootstrap/Dropdown'
 import React from 'react'
 import "./Login.css"
+import "./Header.css"
+import "./Search.css"
 
 
-function Login({userList, newUser, setChangeUser, changeUser}) {
+function Login({userList, newUser, setChangeUser, changeUser, handleToggle, handleSearch}) {
     // let userList = users.map(user => <option key= {user.id}> {user.name}</option>)
 
     // function newUser(e) {
@@ -15,15 +17,20 @@ function Login({userList, newUser, setChangeUser, changeUser}) {
     // function handleUser(){
     //     newUser()
     // }
-  
+    
 
     return (
+        
         <div className="login">
-            <button class="home-btn">Home</button>
+
+            <button onClick={handleToggle} type="button" class="btn-three">Favorites</button>
             <select className="login-select" onChange={newUser} value={changeUser}>
                <option>Select Current User</option>
                {userList}
             </select>
+            <input className="main-search" onChange={handleSearch} className="prompt" placeholder="Search for your favorite"/>
+            <i className="search-icon" />
+           <hr />
         </div>
     )
 }

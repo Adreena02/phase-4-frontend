@@ -4,7 +4,7 @@ import UserContainer from './UserContainer'
 import { useState, useEffect } from 'react'
 
 
-function Container({filteredArt, toggle, users, changeUser, handleFavButton}) {
+function Container({filteredArt, toggle, users, changeUser, handleFavButton, artId}) {
     const [faves, setFaves] = useState([])
 
 // Fetch Get Request for User Favorites
@@ -32,6 +32,7 @@ function Container({filteredArt, toggle, users, changeUser, handleFavButton}) {
     }
 
     
+    
 
     return (
         <div>
@@ -50,6 +51,7 @@ function Container({filteredArt, toggle, users, changeUser, handleFavButton}) {
                 // </UserContainer>
                 ) : (
                 <ContainerCard 
+                artId={artId}
                 filteredArt={filteredArt} 
                 handleFavButton={handleFavButton}/>
             )}

@@ -8,7 +8,7 @@ function FavArt(props) {
     const [front, setFront] = useState(true)
     // const [faves, setFaves] = useState([])
 
-    const {id, likes, artist_info, img_url, title, tags, abcUser, deleteFromFaves} = props
+    const {id, likes, artist_info, img_url, title, tags, changeUser, deleteFromFaves} = props
 
     const handleClick = (e) => {
         setFront(front => !front)
@@ -21,8 +21,8 @@ function FavArt(props) {
     })
 
     const removeFave = () => {
-        if (abcUser.id){
-            let likeId = likes.find(like => like.user_id === abcUser.id).id
+        if (changeUser.id){
+            let likeId = likes.find(like => like.user_id === changeUser.id).id
 
             fetch (`http://localhost:3000/likes/${likeId}`, {
                 method: 'DELETE',

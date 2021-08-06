@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from 'react'
-import {Card} from 'semantic-ui-react'
+// import {Card} from 'semantic-ui-react'
 import FavArt from './FavArt'
 import Art from './Art'
 

@@ -12,6 +12,7 @@ function Content() {
     const [changeUser, setChangeUser] = useState("")
     const [isLoggedIn, setLoggedIn] = useState(false)
     const [toggle, setToggle] = useState(false)
+    const [likes, setLikes] = useState([])
 
 
     useEffect(() => {
@@ -26,6 +27,15 @@ function Content() {
         .then(data => setUsers(data))
     }, [])
 
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/likes')
+    //     .then(res => res.json())
+    //     .then(data => setLikes(data))
+    // }, [])
+
+    let artIds = artCards.map(artId => {
+
+    })
     
     const filteredArt = artCards.filter(artCard =>  {
         return (artCard.title.toLowerCase().includes(search.toLowerCase()))
@@ -40,15 +50,11 @@ function Content() {
         setToggle(!toggle)
       }
 
-    // const handleState = () => {
-    //     setLoggedIn(!isLoggedIn)
-    // }
     
       function newUser(e) {
         let currentUser = users.find(user => user.name === e.target.value)
-        setLoggedIn(true)
+        // setLoggedIn(true)
         setChangeUser(currentUser)
-        // handleState()
     }
  
 
@@ -59,29 +65,41 @@ function Content() {
     
     // Post Request for Favorite button
     
-    function handleFavButton() {
+    function handleFavButton(e) {
     
-    const likedData = { user_id: changeUser.id, art_id: artCards.id}
+        // const likedData = { user_id: changeUser.id, art_id: artCards.id}
+
+        let newArt = filteredArt.map(artId => {
+            return (
+                <Container key = {artId.id} {...artId}/>
+            )
+        })
+
+        // console.log(artCards[0].id)
     
-    console.log(changeUser.id)
-    //     let likeId = likes.find(like => like.user_id === changeUser.id).id
+        const likesObj = {
+            art_id: artCards.id,
+            user_id: changeUser.id
+        }
+
+        // console.log(filteredArt[0].id)
+
+        // console.log(likesObj)
+        // console.log(e.target.value)
+        // console.log(changeUser.id)
+        //     let likeId = likes.find(like => like.user_id === changeUser.id).id
  
-    fetch(`http://localhost:3000/likes/${changeUser.id}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(likedData),
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
+        fetch('http://localhost:3000/likes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(likesObj),
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            // .then(data => setLikes(data))
     }
-    
-
-
-
-
-
 
     return (
         <div>

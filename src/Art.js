@@ -12,7 +12,9 @@ function Art(props) {
 
 
 
-    const {artist_info, title, img_url, tags, handleFavButton} = props
+    const {artist_info, title, img_url, tags, handleFavButton, id, artId} = props
+
+    // console.log("hiya")
     
     const tagsArr = tags.map((tag) => {
         return(
@@ -31,14 +33,16 @@ function Art(props) {
 
     return (
         
+        
         <Card className="cards">
                 {front ? 
                 <div className="photo">
+                    <div>{id}</div>
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
-                    <button className = "similar">Favorite</button>
+                    <button onClick={handleFavButton} className = "similar">Add to Favorites</button>
 
-                    <button className = "details" onClick={handleClick}>Details</button>
+                    <button className = "details" onClick={handleClick}>Show Details</button>
                 </div>
                 :
                 <div className="text">
@@ -67,6 +71,8 @@ function Art(props) {
                 </div> 
                 }
         </Card>
+
+
         
     )
 }
