@@ -9,7 +9,7 @@ function Content() {
     const [artCards, showArtCards] = useState([])
     const [search, setSearch] = useState("")
     const [users, setUsers] = useState([])
-    const [abcUser, changeUser] = useState("")
+    const [changeUser, setChangeUser] = useState("")
     const [isLoggedIn, setLoggedIn] = useState(false)
     const [toggle, setToggle] = useState(false)
 
@@ -47,7 +47,7 @@ function Content() {
       function newUser(e) {
         let currentUser = users.find(user => user.name === e.target.value)
         setLoggedIn(true)
-        changeUser(currentUser)
+        setChangeUser(currentUser)
         // handleState()
     }
  
@@ -61,8 +61,8 @@ function Content() {
     
     function handleFavButton() {
     
-    const data = { user_id: abcUser.id, art_id:"2"}
-    //     let likeId = likes.find(like => like.user_id === abcUser.id).id
+    const data = { user_id: changeUser.id, art_id:"2"}
+    //     let likeId = likes.find(like => like.user_id === changeUser.id).id
  
     fetch(`http://localhost:3000/likes/3`, {
       method: 'POST',
@@ -91,14 +91,14 @@ function Content() {
                 userList={userList}
                 // users={users}
                 handleToggle={handleToggle}
-                abcUser={abcUser}
                 changeUser={changeUser}
+                setChangeUser={setChangeUser}
                 />
             <Container 
                 filteredArt={filteredArt} 
                 isLoggedIn={isLoggedIn} 
                 toggle={toggle}
-                abcUser={abcUser}
+                changeUser={changeUser}
                 users={users}
                 handleFavButton={handleFavButton}
                 />

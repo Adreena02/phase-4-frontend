@@ -7,11 +7,11 @@ function UserContainer(props) {
     // const [front, setFront] = useState(true)
     const [suggestions, setSuggestions] = useState([])
 
-    const {abcUser, faves, deleteFromFaves} = props
+    const {changeUser, faves, deleteFromFaves} = props
 
     useEffect(() => {
-        if (abcUser.id){
-            fetch(`http://localhost:3000/users/suggestions?id=${abcUser.id}`)
+        if (changeUser.id){
+            fetch(`http://localhost:3000/users/suggestions?id=${changeUser.id}`)
             .then(res => res.json())
             .then(setSuggestions)
         }
@@ -22,7 +22,7 @@ function UserContainer(props) {
         return (
             <FavArt 
                 key={fave.id}
-                abcUser={abcUser}
+                changeUser={changeUser}
                 deleteFromFaves={deleteFromFaves}
                 {...fave}/>
         )
@@ -32,7 +32,7 @@ function UserContainer(props) {
         return (
             <Art 
                 key={sugg.id}
-                abcUser={abcUser}
+                changeUser={changeUser}
                 {...sugg}/>
         )
     })
