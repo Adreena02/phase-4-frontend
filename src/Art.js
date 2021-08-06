@@ -9,7 +9,7 @@ function Art(props) {
     const [toggleLike, setToggleLike] = useState(false) 
     
 
-    const {artist_info, title, img_url, tags} = props
+    const {id, artist_info, title, img_url, tags, abcUser, addArt} = props
     
     const tagsArr = tags.map((tag) => {
         return(
@@ -26,6 +26,19 @@ function Art(props) {
         setFront(front => !front)
     }
 
+    const handleLike = () => {
+        if (abcUser.id){
+            fetch(`http://localhost:3000/likes`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({user_id: abcUser.id, art_id: id})
+            })
+            .then(res => res.json())
+            .then(addArt)
+        }
+ 
+    }
+
     return (
         
         <Card className="cards">
@@ -33,13 +46,13 @@ function Art(props) {
                 <div className="photo">
                     <img src= {img_url} alt= "oops"/>
                     <br></br>
-                    <button className = "similar">Favorite</button>
+                    <button className = "similar" onClick={handleLike}>Favorite</button>
                     <button className = "details" onClick={handleClick}>Details</button>
                 </div>
                 :
                 <div className="text">
-                    <h4>{title}</h4>
-                    <h5>by {artist_info}</h5>
+                    <h2>{title}</h2>
+                    <h3>by {artist_info}</h3>
                     <p3 style= {{fontWeight: 'bold'}}>Tags: </p3>
                     <p4>{tagsArr}</p4>
 

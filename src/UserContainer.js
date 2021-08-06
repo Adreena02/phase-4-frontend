@@ -7,7 +7,7 @@ function UserContainer(props) {
     // const [front, setFront] = useState(true)
     const [suggestions, setSuggestions] = useState([])
 
-    const {abcUser, faves, deleteFromFaves} = props
+    const {abcUser, faves, deleteFromFaves, addArt} = props
 
     useEffect(() => {
         if (abcUser.id){
@@ -32,7 +32,8 @@ function UserContainer(props) {
             <Art 
                 key={sugg.id}
                 abcUser={abcUser}
-                {...sugg}/>
+                {...sugg}
+                addArt={addArt}/>
         )
     })
 
@@ -43,7 +44,9 @@ function UserContainer(props) {
          <h2>FAVORITE</h2>
          {favArt}
          <h2>SUGGESTIONS</h2>
-         {suggArt}
+         <div className="suggest">
+            {suggArt}
+         </div>
      </div>
     )
 }

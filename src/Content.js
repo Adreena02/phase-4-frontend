@@ -25,6 +25,7 @@ function Content() {
         .then(data => setUsers(data))
     }, [])
 
+   
     
     const filteredArt = artCards.filter(artCard =>  {
         return (artCard.title.toLowerCase().includes(search.toLowerCase()))

@@ -7,10 +7,15 @@ import { useState, useEffect } from 'react'
 function Container({filteredArt, toggle, users, abcUser}) {
     const [faves, setFaves] = useState([])
 
+    function addArt(art){
+        console.log("yp", art)
+        setFaves([art, ...faves])
+    }
+
+
 
     useEffect(() => {
         if (abcUser.id){
-            console.log('test2');
             fetch(`http://localhost:3000/users/${abcUser.id}/favorites`)
             .then(res => res.json())
             .then(data => setFaves(data))
@@ -34,7 +39,7 @@ function Container({filteredArt, toggle, users, abcUser}) {
         <div>
             {toggle ? (
                 <div>
-                    <UserContainer abcUser={abcUser} faves={faves} deleteFromFaves={deleteFromFaves}/>
+                    <UserContainer abcUser={abcUser} faves={faves} deleteFromFaves={deleteFromFaves} addArt={addArt}/>
                     
                     {/* {favArt} */}
                 </div>
@@ -43,7 +48,7 @@ function Container({filteredArt, toggle, users, abcUser}) {
                 //     <SuggestedArt />
                 // </UserContainer>
                 ) : (
-                <ContainerCard filteredArt={filteredArt} />
+                <ContainerCard filteredArt={filteredArt} abcUser={abcUser} addArt={addArt}/>
             )}
         </div>
     )

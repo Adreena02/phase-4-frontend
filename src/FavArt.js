@@ -55,8 +55,8 @@ function FavArt(props) {
                  </div>
                  :
                  <div className="text">
-                    <h4>{title}</h4>
-                    <h5>by {artist_info}</h5>
+                    <h2>{title}</h2>
+                    <h3>by {artist_info}</h3>
                     <p3 style= {{fontWeight: 'bold'}}>Tags: </p3>
                     <p4>{tagsArr}</p4>
                     <button className="art" onClick={handleClick}>Show Art</button>

@@ -21,12 +21,13 @@ function Login({userList, newUser, changeUser, abcUser, handleToggle, handleSear
 
     return (
         <div className="login">
+            <img className = "icon" src="https://i.imgur.com/wVPrUPC.png"></img>
             <button onClick={handleToggle} type="button" className="btn-three">Favorites</button>
             <select className="login-select" onChange={newUser} value={abcUser}>
                <option>Select Current User</option>
                {userList}
             </select>
-            <input className="main-search" onChange={handleSearch} className="prompt" placeholder="Search for your favorite"/>
+            <input className="main-search" onChange={handleSearch} className="prompt" placeholder="Search for art"/>
             <i className="search-icon" />
         </div>
     )
